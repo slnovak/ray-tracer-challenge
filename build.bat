@@ -4,7 +4,7 @@ if exist "C:\Program Files (x86)\Microsoft Visual Studio\2017\Professional\VC\Au
 ) else (
     call "C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Auxiliary\Build\vcvarsall.bat" x64
 )
-set compilerflags=/Od /Zi /EHsc /std:c++latest /I include
+set compilerflags=/Od /Zi /EHsc /std:c++latest /I include /I src
 set linkerflags=/OUT:bin\main.exe
 cl.exe %compilerflags% src\*.cpp src\test\*.cpp /link %linkerflags%
 del bin\*.ilk *.obj *.pdb
